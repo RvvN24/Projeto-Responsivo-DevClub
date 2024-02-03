@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    color: #5D5D7D;
+}
+
+/* Como aqui é os elementos globais, no nosso projeto só existe uma fonte de um unico tamanho e uma unica cor, para economizar linha codigo, eu posso colocar aqui,
+casp precise estilizar um unico elemento, ai eu sobrescrevo*/
+
+.Wrapper{
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Aqui definimos o padrão da nossa caixa. */
+
+.container-left{
+        display: inline-block;
+        width: 60%;
+        padding: 136px;
+        margin-top: 20%;
+}
+
+.container-right{
+    display: inline-block;
+    background-color: rgba(93, 93, 125, 0.16);       
+    height: 100vh;
+    width: 40%;
+    position: absolute;
+}
+
+/* usamos a propriedade rgba, pois o ultimo se refere a opacity, transparencia, nesse caso o background 
+não vai ser tomado por  toda uma cor e conseguimos ver a imagem */
+
+/* Usamos uma largura de 40% pois determinanos 60% na esquerda. Porém a imagem foi toda para esquerda. Por não ter definido a posição dela.*/
+
+/* Como essa class container right não pertence a um pai, esta apenas dentro de uma caixa, usamos o position: absolute, e ele fez referencia pela pagina.*/
+
+img{
+    position: relative;
+    top: 25%;
+    right: 130px;
+}
+
+/* Usamos o position relative na imagem, para referenciar ela, do ponto de origem dela. Ou seja, do ponto de origem HEADER. Logo, precisamos adicionar valores
+para Top/Button/Right/Left, conforme a necessidade.*/
+
+h1{
+    font-size: 70px;
+    line-height: 80px;
+    width: 368px;
+}
+
+p{
+    font-size: 28px;
+    line-height: 48px;
+    opacity: 0.6;
+    margin: 15px 0;
+    width: 540px;
+}
+
+/* Quando aplicamos margin de 2 valores, o Primeiro de 15px é para cima e baixo e o 0 é para os lados*/
+
+button{
+    width: 269px;
+    height: 62px;
+    background: #9499EA;
+    box-shadow: 0px 10px 24px rgba(148,153,234, 0.0979959);
+    font-size: 24px;
+    font-weight: 36px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+/* Adicionamos esse hover, para que, ao passar o mouse, ele ficara mais transparente com opacidade de 0.8*/
+
+button:active{
+    opacity: 0.5;
+}
+
+/*Adicionamos esse active, para que, além de passar o mouse, ao clicar, ele ficara ainda mais transparente.*/
+
+a{
+    font-size: 28px;
+    line-height: 41px;
+    margin-right: 41px;
+    cursor: pointer;
+}
+
+a:nth-child(2){
+    opacity: 0.4;
+}
+
+/*Lembrete: No caso do nossos links, o pai seria a TAG HEADER.*/
+
+a:hover{
+    opacity: 0.4;
+}
+
+a:active{
+    opacity: 0.8;
+}
+
+header{
+    margin: 24px 0 0 57px;
+}
+
+@media screen and (max-width:900px){
+    .container-left{
+        width: 100%;
+        height: 50%;
+        padding: 0;
+        margin: 0;
+
+    }
+    .container-right{
+        display: block;
+        height: auto;
+        width: 100%;
+        position: static;
+        padding: 40px;
+    }
+/* Usamos padding 40px, para compactar nossa imagem, ja que esse container-right se refere a caixa que esta inclusa a imagem*/
+    img {
+        position: static;
+        width: 90%;
+    }
+
+    header{
+        display: none;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 52px;
+        width: auto;
+        margin: 58px 50px 0 50px;
+        text-align: center;
+    }
+
+    p {
+        margin: 15px 40px;
+        width: auto;
+        text-align: center;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    
+    button {
+        margin: 0 auto;
+        display: block;
+    }
+}
+/*Usamos o margin no TOP 0 e nos lados auto, para o item alinhar ao centro, porém para isso funcionar, precisamos colocar o display como block, 
+    só conseguimos quando o display é block*/
+/*usamos display none, porque esses botões somem na nossa imagem de referencia, logo sem display nenhum*/
+/* no position static, ele ignora valores de top/buttom/right/left*/
+/*usamos height auto, porque como é o ultimo elemento que estamos alterando, ele vai se ajustar conforme o espaço restante disponivel. E Width 100% porque ele
+vai ter que ocupar a tela toda na largura*/
+/* Nesse caso do .container-right, não queremos mais inline block, porque não queremos um do lado do outro.*/
+/* usamos max width 900, porque ao verificar a pagina com o inspec, visualizamos até onde a pagina começa a ficar bagunçada*/
+/* usamos width 100%, porque na imagem que estamos se baseando, ocupa toda a tela na largura, e usamos o height 50%, porque só esta ocupando metade da tela altura.*/
+
